@@ -9,7 +9,7 @@ mod errors {
     error_chain!{}
 }
 
-use errors::*;
+use crate::errors::*;
 
 #[derive(Serialize, Deserialize)]
 struct Node {
