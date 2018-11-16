@@ -1,0 +1,74 @@
+{
+  "nodes":[
+    {
+      "short_code":"EH",
+      "text":"Enjoy Holiday",
+      "description":"Because we're worth it",
+      "doneness":0
+    },
+    {
+      "short_code":"USD",
+      "text":"Get currency (USD)",
+      "description":"From Bureau de Change; $200",
+      "doneness": 100
+    },
+    {
+      "short_code":"GBP",
+      "text":"Get currency (GBP)",
+      "description":"From bank; £200",
+      "doneness":0
+    },
+    {
+      "short_code":"VT",
+      "text":"Visit Town",
+      "description":"Go into town for preparations",
+      "doneness": 100
+    },
+    {
+      "short_code":"BT",
+      "text":"Book Tickets",
+      "description":"Online, for flights and trains",
+      "doneness": 15
+    },
+    {
+      "short_code":"PD",
+      "text":"Pick dates",
+      "description":"Outgoing and return",
+      "doneness": 70
+    },
+    {
+      "short_code":"UC",
+      "text":"Update calendar",
+      "description":"with commitments and appointments",
+      "doneness": 95
+    },
+    {
+      "short_code":"CH",
+      "text":"Call Hosts",
+      "description":"for date confirmation",
+      "doneness": 28
+    }
+  ],
+  "dependencies":[
+    {
+      "node":"EH",
+      "depends_on":["USD","GBP","BT"]
+    },
+    {
+      "node":"USD",
+      "depends_on":["VT"]
+    },
+    {
+      "node":"GBP",
+      "depends_on":["VT"]
+    },
+    {
+      "node":"BT",
+      "depends_on":["PD"]
+    },
+    {
+      "node":"PD",
+      "depends_on":["UC","CH"]
+    }
+  ]
+}

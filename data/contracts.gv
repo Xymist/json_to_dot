@@ -1,0 +1,22 @@
+digraph contracts {
+     host_companies -> host_users -> contracts -> files;
+     files -> documents [label="wrapper around 1+ versions"]
+     host_companies -> document_library [label="has one"];
+     document_library -> files [label="contains many"]
+     participant_companies -> participant_users [label="has many"];
+     participant_users -> contracts [label="contact on many"];
+     participant_users -> event_participants [label="is (possibly many)"];
+     participant_users -> sim_participants [label="is (possibly many)"];
+     events -> event_participants [label="has many"];
+     events -> files [label="has many"];
+     host_users -> sim_events -> files;
+     host_users -> events;
+     events -> lots -> awarded_participants -> contracts;
+     event_participants -> awarded_participants;
+     events -> questionnaires -> questions;
+     questionnaire_answers -> question_answers -> questions;
+     question_answers -> files;
+     sim_events -> questionnaires;
+     event_participants -> files;
+     sim_events -> sim_participants -> questionnaire_answers -> questionnaires;
+}
